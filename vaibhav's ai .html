@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Math Solver</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.0.0/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nerdamer/0.7.0/nerdamer.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AI Math Solver</h1>
+        <p>Enter any mathematical expression below:</p>
+        <input type="text" id="mathInput" placeholder="e.g., 2*x + 3 = 5, sin(45), log(100)" />
+        <button onclick="solveMathProblem()">Solve</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function solveMathProblem() {
+            const mathInput = document.getElementById('mathInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // Handling algebraic equations like 2*x + 3 = 5
+                if (mathInput.includes('=')) {
+                    // Using nerdamer to solve the equation
+                    const solution = nerdamer.solve(mathInput);
+                    resultDiv.innerHTML = `Solution: ${solution.toString()}`;
+                } 
+                // Handling basic arithmetic and math functions using math.js
+                else if (mathInput.match(/[\d\+\-\*\/\^()]/)) {
+                    const result = math.evaluate(mathInput);
+                    resultDiv.innerHTML = `Solution: ${result}`;
+                } 
+                // Handling trigonometric functions like sin, cos, tan
+                else if (mathInput.match(/sin|cos|tan|asin|acos|atan/)) {
+                    const result = math.evaluate(mathInput);
+                    resultDiv.innerHTML = `Solution: ${result}`;
+                } 
+                // Handling logarithms like log, log10
+                else if (mathInput.match(/log/)) {
+                    const result = math.evaluate(mathInput);
+                    resultDiv.innerHTML = `Solution: ${result}`;
+                }
+                // Handling geometry problems, such as area of a circle: A = π * r^2
+                else if (mathInput.match(/circle area/)) {
+                    const radius = mathInput.match(/radius (\d+)/)[1];
+                    const area = math.pi * math.square(radius);
+                    resultDiv.innerHTML = `Circle Area: ${area}`;
+                }
+                // Additional geometry problems can be added here in the future
+                else {
+                    resultDiv.innerHTML = `Error: Unsupported math expression. Please try again.`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `Error: Invalid mathematical expression. Please try again.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
