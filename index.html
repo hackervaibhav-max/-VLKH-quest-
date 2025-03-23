@@ -2,69 +2,68 @@
 <html lang="en">
 <head>
     <meta name="author" content="vaibhav">
-    <title>Vaibhav's main website</title>
+    <title>the possibilities</title>
     <style>
-        /* Overall page styling */
+        /* Cinematic Hacker + Cyberpunk Professional Theme with White Text */
         body {
-            background-color: #282c34; /* Dark background for better contrast */
-            color: #f0f0f0; /* Light text color for contrast */
-            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e; /* Darker base background */
+            color: #ffffff; /* White text */
+            font-family: 'Courier New', Courier, monospace; /* Tech-style font */
             margin: 0;
             padding: 0;
-            text-align: left; /* Set default text alignment to left */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-        /* Header styles */
         h1 {
-            text-align: center;
-            color: #ff4081; /* Vibrant pinkish-teal color */
-            font-size: 40px;
+            color: #ffffff; /* White text for headers */
+            font-size: 32px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             margin-top: 20px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Subtle dark glow */
         }
 
-        /* Paragraph styles */
         p {
-            font-size: 25px;
-            text-align: center;
-            color: #f0f0f0;
+            font-size: 18px;
+            color: #ffffff; /* White text */
             font-style: italic;
-            margin: 20px 0;
+            margin: 20px;
+            text-align: justify; /* Improve text alignment for better readability */
         }
 
-        /* Styled ordered list */
         ol {
-            font-size: 25px;
-            color: #ffeb3b; /* Bright yellow for list items */
-            margin: 20px 0;
+            font-size: 18px;
+            color: #ffffff; /* White text for the list */
+            margin: 20px;
+            padding-left: 20px; /* Indent list */
         }
 
         ol li {
             margin-bottom: 10px;
         }
 
-        /* Link/Button styles */
         .my-button {
-            background-color: #ff5722; /* Vibrant orange */
-            border: none;
-            color: white;
-            padding: 15px 32px;
+            background-color: #343a40; /* Dark grey button background */
+            border: 2px solid #495057; /* Subtle contrast border */
+            color: #ffffff; /* White text */
+            padding: 12px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 18px;
+            font-size: 16px;
             margin: 20px auto;
             cursor: pointer;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Soft glow */
         }
 
         .my-button:hover {
-            background-color: #e64a19; /* Darker orange on hover */
+            background-color: #495057; /* Lighter grey on hover */
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Stronger shadow effect */
         }
 
-        /* Image container styling */
         .image-container {
             text-align: center;
             margin-top: 30px;
@@ -74,67 +73,178 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adding shadow for image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
             transition: transform 0.3s ease-in-out;
         }
 
         img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
+            transform: scale(1.1); /* Zoom effect */
         }
 
-        /* Fun fact and closing paragraph */
         .fun-fact {
-            font-size: 22px;
+            font-size: 18px;
             text-align: center;
-            color: #00e5ff; /* Vibrant cyan for fun fact */
+            color: #ffffff; /* White text */
             font-style: italic;
         }
 
         .end-text {
-            font-size: 35px;
+            font-size: 25px;
             text-align: center;
-            color: #f44336; /* Bold red for the ending */
+            color: #ffffff; /* White text */
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Subtle dark shadow */
         }
 
-        /* Math Solver Container */
+        /* Math Solver container */
         #math-solver-container {
             display: none;
             text-align: center;
-            margin-top: 50px; /* Increased top margin */
+            margin-top: 50px;
             padding: 40px;
-            background-color: #444; /* Dark background for math solver area */
+            background-color: #343a40; /* Dark grey background */
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for math solver */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Dark shadow for contrast */
         }
 
-        /* Input and Button styling inside Math Solver */
         #math-solver-container input {
             font-size: 20px;
             padding: 10px;
             width: 60%;
             margin: 20px 0;
             border-radius: 8px;
-            border: 2px solid #ff5722;
-            background-color: #333;
-            color: white;
+            border: 2px solid #ffffff; /* White border for input */
+            background-color: #23272b; /* Dark background for input */
+            color: #ffffff; /* White text */
         }
 
         #math-solver-container button {
             padding: 12px 30px;
             font-size: 20px;
             margin-top: 20px;
+            background-color: #495057; /* Darker grey button */
+            border: none;
+            color: #ffffff; /* White text */
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow for button */
         }
 
-        /* Add space below Math Solver */
-        .math-solver-space {
-            margin-top: 50px; /* Space after Math Solver */
+        /* Responsive Layout for Mobile Devices */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+                margin-top: 10px;
+            }
+
+            p {
+                font-size: 16px;
+                margin: 15px;
+            }
+
+            ol {
+                font-size: 16px;
+                margin: 15px;
+                padding-left: 15px;
+            }
+
+            .my-button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
+
+            img {
+                max-width: 90%; /* Limit the image width on smaller screens */
+            }
+
+            #math-solver-container {
+                margin-top: 30px;
+                padding: 30px;
+            }
+
+            #math-solver-container input {
+                width: 80%; /* Wider input box on mobile */
+            }
+
+            #math-solver-container button {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+
+            .fun-fact {
+                font-size: 16px;
+            }
+
+            .end-text {
+                font-size: 22px;
+            }
+        }
+
+        /* For Small Devices (Mobile Portrait) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                margin: 10px;
+            }
+
+            ol {
+                font-size: 14px;
+                margin: 10px;
+                padding-left: 10px;
+            }
+
+            .my-button {
+                padding: 10px 16px;
+                font-size: 12px;
+            }
+
+            .image-container {
+                margin-top: 10px;
+            }
+
+            img {
+                max-width: 100%; /* Make images responsive */
+                height: auto;
+            }
+
+            #math-solver-container {
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            #math-solver-container input {
+                width: 90%; /* Make input field responsive */
+            }
+
+            #math-solver-container button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            .fun-fact {
+                font-size: 14px;
+            }
+
+            .end-text {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>HTML website No.2</h1>
-    <p>hello! if you are here, then there are these possibilities:</p>
+    <!-- Settings Button to toggle theme -->
+    <button class="settings-button" onclick="toggleTheme()">Change Theme</button>
+
+    <h1 style=" text-align: center;">HTML website No.2</h1>
+    <p style="text-align: center;">hello! if you are here, then there are these possibilities:</p>
 
     <ol>
         <li>you must be interested in my programming</li>
@@ -143,7 +253,7 @@
         <li>the last option is that it must be me from the future who is looking at this</li>
     </ol>
 
-    <p>You can call these two numbers: 6362067274, 6361156368</p>
+    <p style="text-align: center;">You can call these two numbers: 6362067274, 6361156368</p>
 
     <a href="file:///Users/pavanaila/Documents/untitled%20folder/vaibhav's%20web%20page%20.html" class="my-button" target="_blank">only vaibhav</a>
 
@@ -152,7 +262,7 @@
         <img src="Vaibhav.png" alt="Vaibhav from 2025" width="300" height="400">
     </div>
 
-    <h1 style="font-style: italic;">Vagdev from March 7, 2025, HYD</h1>
+    <h1 style="font-style: italic; text-align: center;">Vagdev from March 7, 2025, HYD</h1>
 
     <div class="image-container">
         <img src="vagdev .png" alt="Vagdev from 2025" width="300" height="400">
@@ -162,20 +272,18 @@
 
     <p class="fun-fact">Fun fact: this is my first 223 lines of HTML programming, and I would further develop it in the upcoming days, months, or years. I would get the official HTTPS link for this when it's finally done (this line will not be deleted forever, March 7, 2025).</p>
 
-    <h1 class="left-align">-Vaibhav Laxmikrishna</h1>
-    <h1 class="left-align">Last edited March 7, 2025, 7:05 PM</h1>
-    <h1 class="left-align">HYD, INDIA</h1>
+    <h1 style="text-align: right;">-Vaibhav Laxmikrishna</h1>
+    <h1 style="text-align: right;">Last edited March 7, 2025, 7:05 PM</h1>
+    <h1 style="text-align: right;">HYD, INDIA</h1>
+
     <p class="end-text">***The End***</p>
 
-    <!-- New header for Math Solver Program -->
-    <h1 style="text-align: center; color: #ff5722;">My First AI Math Solver Program</h1>
+    <h1 style="text-align: center;">My First AI Math Solver Program</h1>
 
-    <!-- Button to Show/Hide Math Solver -->
     <div style="text-align: center;">
         <button class="my-button" id="math-solver-button" onclick="toggleMathSolver()">Show Math Solver</button>
     </div>
 
-    <!-- Math Solver Section -->
     <div id="math-solver-container">
         <h1>Math Solver</h1>
         <p>Enter any mathematical expression below:</p>
@@ -185,11 +293,9 @@
         <div class="result" id="result"></div>
     </div>
 
-    <!-- Empty Space after Math Solver -->
     <div class="math-solver-space"></div>
 
     <script>
-        // Function to toggle visibility of the Math Solver and update the button text
         function toggleMathSolver() {
             var mathSolver = document.getElementById('math-solver-container');
             var button = document.getElementById('math-solver-button');
@@ -207,11 +313,22 @@
             const resultDiv = document.getElementById('result');
             
             try {
-                // Handle basic math operations using math.js
                 const result = math.evaluate(mathInput);
                 resultDiv.innerHTML = `Solution: ${result}`;
             } catch (error) {
                 resultDiv.innerHTML = `Error: Invalid mathematical expression. Please try again.`;
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.settings-button');
+            body.classList.toggle('light-theme');
+
+            if (body.classList.contains('light-theme')) {
+                button.textContent = "Switch to Dark Theme";
+            } else {
+                button.textContent = "Switch to Light Theme";
             }
         }
     </script>
@@ -219,3 +336,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.0.0/math.min.js"></script>
 </body>
 </html>
+
