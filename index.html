@@ -130,27 +130,29 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow for button */
         }
 
+        /* Responsive Layout for Laptop and Mobile Devices */
+        @media (max-width: 1024px) {
+            .my-button {
+                padding: 16px 25px;
+                font-size: 18px;
+            }
+
+            #math-solver-container button {
+                padding: 15px 35px;
+                font-size: 22px;
+            }
+        }
+
         /* Responsive Layout for Mobile Devices */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 28px;
-                margin-top: 10px;
-            }
-
-            p {
-                font-size: 16px;
-                margin: 15px;
-            }
-
-            ol {
-                font-size: 16px;
-                margin: 15px;
-                padding-left: 15px;
-            }
-
             .my-button {
-                padding: 12px 20px;
-                font-size: 14px;
+                padding: 18px 30px;
+                font-size: 20px; /* Larger button size on mobile */
+            }
+
+            #math-solver-container button {
+                padding: 18px 40px;
+                font-size: 24px; /* Even larger button size for mobile math solver button */
             }
 
             .image-container {
@@ -171,8 +173,8 @@
             }
 
             #math-solver-container button {
-                font-size: 18px;
-                padding: 10px 20px;
+                font-size: 22px;
+                padding: 15px 30px;
             }
 
             .fun-fact {
@@ -186,24 +188,14 @@
 
         /* For Small Devices (Mobile Portrait) */
         @media (max-width: 480px) {
-            h1 {
-                font-size: 24px;
-            }
-
-            p {
-                font-size: 14px;
-                margin: 10px;
-            }
-
-            ol {
-                font-size: 14px;
-                margin: 10px;
-                padding-left: 10px;
-            }
-
             .my-button {
-                padding: 10px 16px;
-                font-size: 12px;
+                padding: 20px 35px;
+                font-size: 24px; /* Even larger button size for smaller devices */
+            }
+
+            #math-solver-container button {
+                padding: 22px 45px;
+                font-size: 28px; /* Larger button for math solver */
             }
 
             .image-container {
@@ -225,8 +217,8 @@
             }
 
             #math-solver-container button {
-                font-size: 16px;
-                padding: 10px 20px;
+                font-size: 26px;
+                padding: 20px 40px;
             }
 
             .fun-fact {
@@ -270,7 +262,7 @@
 
     <p id="name-time">IDK who you are (like it may be Pavan mama, Vaibhav, Vagdev, Amma), but write your name, date, and what time you are viewing this.</p>
 
-    <p class="fun-fact">Fun fact: this is my first 223 lines of HTML programming, and I would further develop it in the upcoming days, months, or years. I would get the official HTTPS link for this when it's finally done (this line will not be deleted forever, March 7, 2025).</p>
+    <p class="fun-fact">Fun fact: this is my first 331 lines of HTML programming, and I would further develop it in the upcoming days, months, or years. I would get the official HTTPS link for this when it's finally done (this line will not be deleted forever, March 7, 2025).</p>
 
     <h1 style="text-align: right;">-Vaibhav Laxmikrishna</h1>
     <h1 style="text-align: right;">Last edited March 7, 2025, 7:05 PM</h1>
@@ -336,4 +328,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.0.0/math.min.js"></script>
 </body>
 </html>
+
 
