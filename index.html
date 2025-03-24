@@ -58,10 +58,23 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Soft glow */
         }
 
-        .my-button:hover {
-            background-color: #495057; /* Lighter grey on hover */
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Stronger shadow effect */
+        /* Glowing effect for Math Solver button */
+        #math-solver-button {
+            padding: 12px 30px;
+            font-size: 20px;
+            margin-top: 20px;
+            background-color: #495057; /* Darker grey button */
+            border: none;
+            color: #ffffff; /* White text */
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.7); /* Green back glow */
+            transition: box-shadow 0.3s ease;
+        }
+
+        #math-solver-button:hover {
+            background-color: #343a40; /* Darker grey when hovered */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 1); /* Stronger green glow on hover */
         }
 
         .image-container {
@@ -128,6 +141,24 @@
             border-radius: 8px;
             cursor: pointer;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow for button */
+        }
+
+        /* Loading screen styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000; /* Pitch black background */
+            color: #00ff00; /* Green text color */
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Make sure it's on top */
         }
 
         /* Responsive Layout for Laptop and Mobile Devices */
@@ -234,6 +265,9 @@
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">Downloading all your files...</div>
+
     <!-- Settings Button to toggle theme -->
     <button class="settings-button" onclick="toggleTheme()">Change Theme</button>
 
@@ -290,6 +324,13 @@
     <div class="math-solver-space"></div>
 
     <script>
+        // Hide the loading screen after 5 seconds
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("loading-screen").style.display = "none";
+            }, 5000); // Hide after 5 seconds
+        }
+
         function toggleMathSolver() {
             var mathSolver = document.getElementById('math-solver-container');
             var button = document.getElementById('math-solver-button');
